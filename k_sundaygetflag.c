@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * g_flag - function to determine formatting instruction
  * @style: integer
@@ -18,17 +17,18 @@ int g_flag(const char *style, int *k)
 
 	for (c = *k + 1; style[c] != '\0'; c++)
 	{
-		for (p = 0; SIGNS[p] != '\0'; p++)
+	for (p = 0; SIGNS[p] != '\0'; p++)
+	{
+		if (style[c] == SIGNS[p])
 		{
-			if (style[c] == SIGNS[p])
-			{
-				amount |= SIGNS_VALUES[p];
-				break;
-			}
+			amount |= SIGNS_VALUES[p];
+			break;
 		}
+	}
 		if (SIGNS[p] == 0)
 		break;
 	}
 	*k = c - 1;
+
 	return (amount);
 }
