@@ -36,7 +36,7 @@ int kenny_percent(void)
 */
 int kenny_str(va_list kenny_arg)
 {
-	char s = va_arg(kenny_arg, char);
+	char *s = va_arg(kenny_arg, char*);
 
 	if (s == NULL)
 	s = "(null)";
